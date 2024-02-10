@@ -944,3 +944,75 @@ const movies = [
     "8.3",
   ],
 ];
+
+const outputSection = document.querySelector(".movie");
+
+// Übernimmt das Array movies ins HTML
+const showMovies = (array) => {
+  // Mit forEach durchlaufen wir jedes einzelne Array und geben mit innerHTML die einzelnen Elemente in einem div aus
+  array.forEach((data) => {
+    outputSection.innerHTML += `
+<div>
+<h2> ${data[0]} </h2>
+<p> ${data[1]} </p>
+<h4> ${data[2]} </h4>
+<p> ${data[3]} </p>
+<p> ${data[4].join("<br>")} </p>
+<p> ${data[5]} </p>
+</div>
+`;
+  });
+};
+
+// Gibt alle Arrays im HTML aus
+showMovies(movies);
+
+// Filtert nach Suchwort
+const search = () => {
+  // Gibt uns den Wert des Suchfelds aus
+  const inputSearch = document.querySelector("#input-text").value;
+  // Leert das HTML, damit nur die gefilterten Filme angezeigt werden
+  outputSection.innerHTML = "";
+  // Passende Filme werden in einem neuen Array gespeichert
+  const inputSearchFilter = movies.filter((allMovies) => {
+    return allMovies[0].toLowerCase().includes(inputSearch.toLowerCase());
+  });
+  // Passende Filme werden im HTML ausgegeben
+  showMovies(inputSearchFilter);
+};
+
+// Sortiert das Erscheinungsjahr aufsteigend
+const yearUp = () => {
+  // Leert das HTML
+  outputSection.innerHTML = "";
+  // Vergleicht den Array an Index1 miteinander
+  const sortedMovies = [...movies].sort((a, b) => {
+    return a[1] - b[1];
+  });
+  // Befüllt das HTML mit der Sortierung
+  showMovies(sortedMovies);
+};
+
+// Sortiert das Erscheinungsjahr absteigend
+const yearDown = () => {
+  // Leert das HTML
+  outputSection.innerHTML = "";
+  // Vergleicht den Array an Index1 miteinander
+  const sortedMovies = [...movies].sort((a, b) => {
+    return b[1] - a[1];
+  });
+  // Befüllt das HTML mit der Sortierung
+  showMovies(sortedMovies);
+};
+
+// Sortiert das Rating absteigend
+const bestRate = () => {
+  // Leert das HTML
+  outputSection.innerHTML = "";
+  // Vergleicht den Array an Index5 miteinander
+  const sortedMovies = [...movies].sort((a, b) => {
+    return b[5] - a[5];
+  });
+  // Befüllt das HTML mit der Sortierung
+  showMovies(sortedMovies);
+};

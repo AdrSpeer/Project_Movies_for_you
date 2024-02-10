@@ -11,14 +11,9 @@
       <h1>Movies for You</h1>
       <h3>The best MovieDB</h3>
     </header>
-    <form class="submit">
+    <form class="submit" onsubmit="return false">
       <input id="input-text" type="text" />
-      <input
-        id="submit"
-        type="submit"
-        value="SEARCH"
-        onsubmit="search(event)"
-      />
+      <input onclick="search()" id="submit" type="submit" value="SEARCH" />
     </form>
     <form class="buttons">
       <input id="yearup" type="button" value="YEAR UP" onclick="yearUp()" />
