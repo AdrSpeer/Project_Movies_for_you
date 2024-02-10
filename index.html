@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Movies for You</h1>
+      <h3>The best MovieDB</h3>
+    </header>
+    <form class="submit">
+      <input id="input-text" type="text" />
+      <input
+        id="submit"
+        type="submit"
+        value="SEARCH"
+        onsubmit="search(event)"
+      />
+    </form>
+    <form class="buttons">
+      <input id="yearup" type="button" value="YEAR UP" onclick="yearUp()" />
+      <input
+        id="yeardown"
+        type="button"
+        value="YEAR DOWN"
+        onclick="yearDown()"
+      />
+      <input
+        id="bestrate"
+        type="button"
+        value="BEST RATE"
+        onclick="bestRate()"
+      />
+    </form>
+    <main>
+      <section class="movie"></section>
+    </main>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
