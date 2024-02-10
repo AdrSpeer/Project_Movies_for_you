@@ -14,6 +14,9 @@ img {
   max-width: 100%;
 }
 
+body {
+  background-color: rgba(50, 199, 149, 0.373);
+}
 header {
   display: flex;
   flex-direction: column;
@@ -23,15 +26,42 @@ header {
   gap: 1vw;
 }
 
+#input-text,
+#submit {
+  padding: 0.7vw;
+  border-radius: 1.5rem;
+}
+
+#submit {
+  color: white;
+  background-color: rgba(103, 179, 153, 0.722);
+  border: white solid 0.1rem;
+}
+
+#input-text {
+  padding-left: 6vw;
+  border: none;
+}
+
 .submit,
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .buttons {
   margin-bottom: 1vw;
+}
+
+input[type="button"] {
+  background-color: transparent;
+  padding: 0.6vw;
+  margin-right: 0.8vw;
+  border: white solid 0.1rem;
+  border-radius: 1.5rem;
 }
 
 section {
@@ -42,7 +72,7 @@ section {
 }
 
 div {
-  background-color: rgba(145, 216, 90, 0.661);
+  background-color: rgba(153, 200, 183, 0.661);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,4 +80,14 @@ div {
   padding: 1vw;
   border-radius: 10px;
   text-align: center;
+}
+
+.movie div h2 {
+  margin-bottom: 1rem;
+}
+.movie div h4 {
+  margin-bottom: 1rem;
+}
+.movie div p {
+  margin-bottom: 0.7rem;
 }

@@ -11,26 +11,26 @@
       <h1>Movies for You</h1>
       <h3>The best MovieDB</h3>
     </header>
-    <form class="submit" onsubmit="return false">
-      <input id="input-text" type="text" />
-      <input onclick="search()" id="submit" type="submit" value="SEARCH" />
-    </form>
-    <form class="buttons">
-      <input id="yearup" type="button" value="YEAR UP" onclick="yearUp()" />
-      <input
-        id="yeardown"
-        type="button"
-        value="YEAR DOWN"
-        onclick="yearDown()"
-      />
-      <input
-        id="bestrate"
-        type="button"
-        value="BEST RATE"
-        onclick="bestRate()"
-      />
-    </form>
     <main>
+      <form class="submit" onsubmit="return false">
+        <input id="input-text" type="text" />
+        <input onclick="search()" id="submit" type="submit" value="SEARCH" />
+      </form>
+      <form class="buttons">
+        <input id="yearup" type="button" value="YEAR UP" onclick="yearUp()" />
+        <input
+          id="yeardown"
+          type="button"
+          value="YEAR DOWN"
+          onclick="yearDown()"
+        />
+        <input
+          id="bestrate"
+          type="button"
+          value="BEST RATE"
+          onclick="bestRate()"
+        />
+      </form>
       <section class="movie"></section>
     </main>
     <script src="./assets/js/main.js"></script>
