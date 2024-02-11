@@ -973,12 +973,30 @@ const search = () => {
   const inputSearch = document.querySelector("#input-text").value;
   // Leert das HTML, damit nur die gefilterten Filme angezeigt werden
   outputSection.innerHTML = "";
+
   // Passende Filme werden in einem neuen Array gespeichert
   const inputSearchFilter = movies.filter((allMovies) => {
     return allMovies[0].toLowerCase().includes(inputSearch.toLowerCase());
   });
-  // Passende Filme werden im HTML ausgegeben
-  showMovies(inputSearchFilter);
+
+  const inputSearchYear = movies.filter((allMovies) => {
+    return Number(allMovies[1]) === Number(inputSearch);
+  });
+
+  // Error Meldung, wenn der Film nicht gefunden wurde
+  if (inputSearchFilter.length === 0 && inputSearchYear.length === 0) {
+    outputSection.innerHTML += `
+    <article>
+    <h1>Film not found</h1> <img 
+    src="./assets/img/mulyadi-ZnLprInKM7s-unsplash.jpg"
+    alt="Film not found"
+  /> </article> `;
+  } else if (inputSearchYear.length > 0) {
+    showMovies(inputSearchYear);
+  } else {
+    // Passende Filme werden im HTML ausgegeben
+    showMovies(inputSearchFilter);
+  }
 };
 
 // Sortiert das Erscheinungsjahr aufsteigend
@@ -1016,3 +1034,24 @@ const bestRate = () => {
   // Befüllt das HTML mit der Sortierung
   showMovies(sortedMovies);
 };
+
+// Neue Filme hinzufügen
+let newMovie = [
+  "Super Bad",
+  "2005",
+  "Adrian Speer",
+  "2h 32min",
+  ["Comedy"],
+  "10",
+];
+
+newMovie = [
+  "Game Over Man",
+  "2005",
+  "Adrian Speer",
+  "2h 32min",
+  ["Comedy"],
+  "10",
+];
+
+movies.push(newMovie);
