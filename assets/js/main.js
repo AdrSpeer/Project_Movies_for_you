@@ -1045,6 +1045,8 @@ let newMovie = [
   "10",
 ];
 
+movies.push(newMovie);
+
 newMovie = [
   "Game Over Man",
   "2005",
